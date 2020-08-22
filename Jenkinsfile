@@ -29,7 +29,7 @@ node {
     }
 
     stage('Deploy to Server') {
-        def dockerRun = 'docker rm hello-world --force && docker run -d -p 8080:8080 --name hello-world gokuldevops/hello-world'
+        def dockerRun = 'docker stop hello-world || true && docker rm hello-world || true --force && docker run -d -p 8080:8080 --name hello-world gokuldevops/hello-world'
 
         sshagent(['deploy-to-dev-docker']) {
             sh "ssh -o StrictHostKeyChecking=no mp_task@13.81.5.7 ${dockerRun}"
