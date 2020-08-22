@@ -30,6 +30,7 @@ node {
 
     stage('deploy image') {
         app.inside {
+            sh 'chmod +x docker-run.sh'
             sh './docker-run.sh'
         }
     }
