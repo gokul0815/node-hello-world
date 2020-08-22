@@ -10,6 +10,9 @@
     "type": "git",
     "url": "git+https://github.com/gokul0815/node-hello-world.git"
   },
+  "dependencies": {
+    "express": "^4.16.1"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {

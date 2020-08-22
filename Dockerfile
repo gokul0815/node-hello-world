@@ -12,9 +12,7 @@ RUN npm install
 # Bundle app source
 COPY . .
 
-HEALTHCHECK --interval=5s \
-            --timeout=5s \
-            CMD curl -f http://127.0.0.1:8080 || exit 1
+#HEALTHCHECK --interval=5s --timeout=5s CMD curl -f http://127.0.0.1:3000 || exit 1
 
 EXPOSE 8080
 CMD [ "node", "index.js" ]
