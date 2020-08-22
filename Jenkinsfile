@@ -24,7 +24,7 @@ node {
     }
 
     stage('deploy image') {
-        step {
+        app.inside {
             sh 'docker ps -a | awk '{ print $1,$2 }' | grep gokul0815/hello-world | awk '{print $1 }' | xargs -I {} docker rm {}'
             sh 'sudo docker run -d -p 3000:3000 gokul0815/hello-world'
         }
