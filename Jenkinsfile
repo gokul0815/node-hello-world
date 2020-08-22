@@ -32,7 +32,7 @@ node {
                 | awk '{print \$1 }' \
                 | xargs -I {} docker rm -f {}
             """
-            sh 'sudo docker run -d -p 3000:3000 gokul0815/hello-world'
+            sh 'docker run -d -p 8080:8080 gokul0815/hello-world'
         }
     }
 
