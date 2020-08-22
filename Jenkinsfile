@@ -11,7 +11,7 @@ node {
     }
 
     stage('Build image') {
-        app = docker.build("gokuldevops/hello-world")
+        app = docker.build("gokuldevops/hello-world").withRun('-p 8080:8080')
     }
 
     stage('Test image') {
